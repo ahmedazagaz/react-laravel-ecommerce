@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-        public function up(): void
+    public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
@@ -19,13 +19,14 @@ return new class extends Migration
             $table->string('payment_status')->nullable();
             $table->enum('status', ['processing', 'shipped', 'delivered', 'canceled'])->default('new');
             $table->string(column: 'currency')->nullable();
-            $table->decimal('shippimg_amount', 10, 2)->nullable();
+            $table->decimal('shipping_amount', 10, 2)->nullable();
             $table->string(column: 'shipping_method')->nullable();
             $table->text(column: 'notes')->nullable();
             $table->timestamps();
 
         });
     }
+
     /**
      * Reverse the migrations.
      */
