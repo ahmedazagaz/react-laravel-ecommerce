@@ -16,6 +16,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
+// Brand Routes
 Route::resource('brands', \App\Http\Controllers\BrandController::class);
 
 require __DIR__.'/settings.php';
