@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -15,8 +16,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 });
-
-// Brand Routes
-Route::resource('brands', \App\Http\Controllers\BrandController::class);
 
 require __DIR__.'/settings.php';
